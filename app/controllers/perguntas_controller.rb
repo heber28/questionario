@@ -69,6 +69,6 @@ class PerguntasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pergunta_params
-      params.require(:pergunta).permit(:descricao)
+      params.require(:pergunta).permit(:pergunta)
     end
 end

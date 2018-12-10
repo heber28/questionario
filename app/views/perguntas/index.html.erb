@@ -5,7 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>Descricao</th>
+      <th>Pergunta</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -13,7 +13,7 @@
   <tbody>
     <% @perguntas.each do |pergunta| %>
       <tr>
-        <td><%= pergunta.descricao %></td>
+        <td><%= pergunta.pergunta %></td>
         <td><%= link_to 'Show', pergunta %></td>
         <td><%= link_to 'Edit', edit_pergunta_path(pergunta) %></td>
         <td><%= link_to 'Destroy', pergunta, method: :delete, data: { confirm: 'Are you sure?' } %></td>
