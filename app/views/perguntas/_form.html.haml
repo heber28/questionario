@@ -1,0 +1,12 @@
+= form_for @pergunta do |f|
+  .field
+    = f.label :pergunta
+    %br
+    = f.text_field :pergunta
+  %h3 Respostas
+  #respostas
+    = f.fields_for :respostas do |resposta|
+      = render 'respostas_fields', f: resposta
+    .links
+      = link_to_add_association 'add resposta', f, :respostas
+  = f.submit
