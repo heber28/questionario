@@ -71,7 +71,7 @@ class PerguntasController < ApplicationController
     def pergunta_params
       params.require(:pergunta).permit(
         :pergunta,
-        respostas_attributes: [ :id, :resposta ] 
+        respostas_attributes: [ :id, :resposta, :_destroy ] 
       )
     end
 end

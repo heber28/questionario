@@ -1,0 +1,3 @@
+<%= form.label :resposta %>
+<%= form.text_field :resposta %>
+<%= link_to_remove_association "remover resposta", form %>
