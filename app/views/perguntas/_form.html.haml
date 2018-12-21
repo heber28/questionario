@@ -2,11 +2,11 @@
   .field
     = f.label :pergunta
     %br
-    = f.text_field :pergunta
-  %h3 Respostas
-  #respostas
+    = f.text_field :pergunta,  size: 50
     = f.fields_for :respostas do |resposta|
       = render 'respostas_fields', f: resposta
+    %br 
+    %br 
     .links
-      = link_to_add_association 'add resposta', f, :respostas
+      = link_to_add_association 'Adicionar resposta', f, :respostas
   = f.submit
