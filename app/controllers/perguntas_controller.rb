@@ -19,6 +19,7 @@ class PerguntasController < ApplicationController
 
   # GET /perguntas/1/edit
   def edit
+    @pergunta = Pergunta.find(params[:id])
   end
 
   # POST /perguntas

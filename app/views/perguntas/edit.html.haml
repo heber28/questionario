@@ -1,0 +1,26 @@
+%h1 Editing Pergunta
+
+= form_with(model: @pergunta, local: true) do |form|
+  - if @pergunta.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@pergunta.errors.count, "error")
+        prohibited this pergunta from being saved:
+      %ul
+        - @pergunta.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = form.label :pergunta
+    %br
+    = form.text_field :pergunta,  size: 50
+    %br
+    %br
+    = form.fields_for :respostas do |resposta|
+      = render 'resposta_fields', f: resposta
+    .links
+      = link_to_add_association 'Adicionar resposta', form, :respostas
+  = form.submit
+= link_to 'Show', @pergunta
+|
+= link_to 'Back', perguntas_path
